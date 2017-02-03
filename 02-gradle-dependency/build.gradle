@@ -1,20 +1,36 @@
 apply plugin: 'java'
 
 repositories {
+    mavenCentral()
     jcenter()
+
+    //    //Custom url
+    //    ivy {
+    //        url 'http://ivy.teammental.com/repo'
+    //    }
+    //    maven {
+    //        url 'http://maven.teammental.com/repo'
+    //    }
+    //    flatDir {
+    //        dirs 'lib'
+    //    }
 }
 
 dependencies {
 
     //Logging
-    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
+    //Logback for logging
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.9'
 
     //Test
-    testCompile 'junit:junit:4.12'
+    compile group: 'junit', name: 'junit', version: '4.12'
 
 }
 
 jar {
+    //dependent jar ları proje jarına ekleme
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     manifest {
         attributes 'Main-Class': 'com.teammental.HelloWorldDependency'
     }
