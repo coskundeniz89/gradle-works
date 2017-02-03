@@ -23,7 +23,7 @@ public class MessageServiceTest {
 
     @Test
     public void getMessage_ShouldReturnMessage(){
-        LOGGER.info("tetetet");
+        LOGGER.debug("Test start");
         assertEquals("Merhaba Türkiye", messageService.getMessage());
     }
 

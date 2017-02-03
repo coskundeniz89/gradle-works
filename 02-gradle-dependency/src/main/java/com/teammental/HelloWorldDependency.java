@@ -11,10 +11,10 @@ public class HelloWorldDependency {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldDependency.class);
 
     public static void main(String[] args) {
+        LOGGER.info("Main start");
+
         MessageService messageService = new MessageService();
         String message = messageService.getMessage();
-
-        LOGGER.info(message);
         System.out.println(message);
     }
 
