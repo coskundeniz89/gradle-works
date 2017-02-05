@@ -5,10 +5,10 @@ import org.junit.Test;
 /**
  * Created by Coşkun on 3.2.2017.
  */
-public class Test1 {
+public class TestAnnotation {
 
     @Test
-    public void test1() {
+    public void test() {
         System.out.println("This a default unit test");
     }
 
